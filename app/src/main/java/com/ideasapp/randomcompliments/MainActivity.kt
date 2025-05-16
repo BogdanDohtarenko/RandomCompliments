@@ -23,13 +23,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val viewModel = ComplimentViewModel()
         setContent {
             RandomComplimentsTheme {
-                MainScreen(
-                    onClick = { viewModel.getNewCompliment() },
-                    currentCompliment = viewModel.currentCompliment
-                )
+                MainScreen()
             }
         }
     }
