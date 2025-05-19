@@ -6,7 +6,7 @@ import org.jsoup.select.Elements
 
 
 object HtmlParser {
-    fun String.extractCompliments():List<String> {
+    fun String.extractCompliments(): List<String> {
         val compliments:MutableList<String> = ArrayList()
         val document:Document = Jsoup.parse(this)
 
