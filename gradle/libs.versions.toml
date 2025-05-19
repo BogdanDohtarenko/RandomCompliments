@@ -1,6 +1,7 @@
 [versions]
 agp = "8.5.0"
 converterGson = "2.5.0"
+converterScalars = "2.9.0"
 jsoupVersion = "1.15.4"
 kotlin = "1.9.0"
 coreKtx = "1.10.0"
@@ -16,6 +17,7 @@ squareupRetrofit = "2.9.0"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "converterScalars" }
 jsoup-jsoup = { module = "org.jsoup:jsoup", version.ref = "jsoupVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
