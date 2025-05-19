@@ -47,6 +47,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.jsoup.jsoup)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.squareup.retrofit)
     implementation(libs.converter.gson)
