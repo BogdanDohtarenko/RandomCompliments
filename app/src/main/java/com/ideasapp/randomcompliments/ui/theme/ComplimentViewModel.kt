@@ -7,7 +7,6 @@ import com.ideasapp.randomcompliments.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.List
 
 
 class ComplimentViewModel {
@@ -16,19 +15,19 @@ class ComplimentViewModel {
         val call:Call<String> = apiService.getComplimentsPage()
 
         call.enqueue(object : Callback<String?> {
-            override fun onResponse(call:Call<String?>?,response:Response<String?>) {
-                if (response.isSuccessful() && response.body() != null) {
+            override fun onResponse(call:Call<String?>,response:Response<String?>) {
+                if (response.isSuccessful && response.body() != null) {
                     val string = response.body()
-                    val compliments: List<String> = string.extractCompliments()
+                    val compliments: List<String> = string?.extractCompliments() ?: listOf()
                     for(compliment in compliments) {
-                        Log.d(TAG,compliment!!)
+                        Log.d(TAG,compliment)
                     }
                 } else {
                     Log.e(TAG,"Failed to fetch HTML content")
                 }
             }
 
-            override fun onFailure(call:Call<String?>?,t:Throwable?) {
+            override fun onFailure(call:Call<String?>,t:Throwable) {
                 Log.e(TAG,"API call failed",t)
             }
         })
