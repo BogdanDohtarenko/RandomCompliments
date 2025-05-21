@@ -19,8 +19,10 @@ class ComplimentViewModel {
                 if (response.isSuccessful && response.body() != null) {
                     val string = response.body()
                     val compliments: List<String> = string?.extractCompliments() ?: listOf()
+                    var count = 0
                     for(compliment in compliments) {
-                        Log.d(TAG,compliment)
+                        count++
+                        Log.d(TAG,"$count: $compliment")
                     }
                 } else {
                     Log.e(TAG,"Failed to fetch HTML content")
@@ -36,6 +38,6 @@ class ComplimentViewModel {
         return "I love you"
     }
     companion object {
-        const val TAG:String = "Call"
+        const val TAG:String = "CallCompliment"
     }
 }
