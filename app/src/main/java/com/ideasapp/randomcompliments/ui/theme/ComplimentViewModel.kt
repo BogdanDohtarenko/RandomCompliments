@@ -16,6 +16,7 @@ import retrofit2.Response
 class ComplimentViewModel {
     private val coroutineScope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     var loadingCompleted: Boolean = false
+    var complimentsList: List<String> = listOf()
     init {
         coroutineScope.launch {
             val apiService:ApiService = RetrofitClient.retrofit.create(ApiService::class.java)
@@ -32,6 +33,7 @@ class ComplimentViewModel {
                             Log.d(TAG,"$count: $compliment")
                         }
                         loadingCompleted = true
+                        complimentsList = compliments
                     } else {
                         Log.e(TAG,"Failed to fetch HTML content")
                     }
@@ -45,10 +47,8 @@ class ComplimentViewModel {
     }
 
     fun getNewCompliment(): String {
-        if (loadingCompleted)
-            return "I love you"
-        else
-            return "Please click again later"
+        return if (loadingCompleted && complimentsList.isNotEmpty()) complimentsList.random()
+        else "Please click again later"
     }
 
     companion object {
