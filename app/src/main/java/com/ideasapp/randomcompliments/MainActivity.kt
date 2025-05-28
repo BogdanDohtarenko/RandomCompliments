@@ -18,6 +18,7 @@ import com.ideasapp.randomcompliments.ui.theme.ui.MainScreen
 
 //TODO
 // 1. https://www.momjunction.com/articles/compliments-for-girls_00685873/
+// 1. https://www.stylecraze.com/articles/compliments-for-girls/
 // 2. pars random compliment from this site by button clicking
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState:Bundle?) {

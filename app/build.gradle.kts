@@ -47,6 +47,7 @@ android {
 }
 
 dependencies {
+    implementation("org.brotli:dec:0.1.2")
     implementation(libs.jsoup.jsoup)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.squareup.retrofit)
